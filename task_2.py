@@ -8,17 +8,14 @@ def get_count_char(str_):
             for item in str_:
                 if item.isalpha():
                     dict_of_symbols[item] = dict_of_symbols.get(item, DEFAULT_COUNT) + 1
-            if dict_of_symbols:
-                return dict_of_symbols
-            else:
+            if not dict_of_symbols:
                 print("В этой строке нет букв")
-                return dict_of_symbols
         else:
             print("Это пустая строка")
-            return dict_of_symbols
     else:
         print("Это не строка")
-        return dict_of_symbols
+
+    return dict_of_symbols
 
 
 def percentage(dict_, accuracy=1):
@@ -34,16 +31,14 @@ def percentage(dict_, accuracy=1):
                 amount = sum(dict_.values())
                 for index in dict_:
                     new_dict[index] = round(dict_[index] / amount * 100, accuracy)
-                return new_dict
             else:
                 print("Значения словаря содержат не только цифры, нельзя найти процентное соотношение символов")
-                return new_dict
         else:
             print("Это пустой словарь")
-            return new_dict
     else:
         print("Это не словарь")
-        return new_dict
+
+    return new_dict
 
 
 var = 2  # тестовые переменные
